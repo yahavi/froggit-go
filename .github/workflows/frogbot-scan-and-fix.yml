@@ -1,5 +1,6 @@
 name: "Frogbot Scan and Fix"
 on:
+  workflow_dispatch:
   schedule:
     # The repository will be scanned once a day at 00:00 GMT.
     - cron: "0 0 * * *"
@@ -7,6 +8,7 @@ permissions:
   contents: write
   pull-requests: write
   security-events: write
+  actions: write
 jobs:
   create-fix-pull-requests:
     runs-on: ubuntu-latest
